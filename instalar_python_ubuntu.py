@@ -107,9 +107,11 @@ def parte6():
         - deactivate (para desativar)
     """
 
-# Configurar Pyenv para o Python
+# Instalar e configuração inicial do Pyenv
 def parte7():
     """
+    //////////////////////////////////////////////// INSTALAR/CONFIGURAR ///////////////////////////////////////////////
+
     1 - curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
     2 - Ir à rota [ /home/seu_user/ ] e abrir o arquivo [ .bashrc ]
     3 - Inserir ao final:
@@ -119,23 +121,45 @@ def parte7():
         eval "$(pyenv virtualenv-init -)"
 
     4 - Salvar [ .bashrc ] e reabrir o terminal
-    5 - pyenv            (deve haver algum retorno)
+    5 - pyenv
     6 - pyenv install -l (listagem de versões para instalar do Pyenv)
     7 - Procurar na listagem, a versão inteiramente numérica mais atual [ EXEMPLO: 3.9.1 ]
     8 - Usar o comando de acordo com o exemplo acima: [ pyenv install 3.9.1 ]
+    """
 
-    9 - Como criar um ambiente virtual pelo Pyenv?
+# Criar um ambiente virtual pelo Pyenv
+def parte8():
+    """
+    - Crie uma pasta
+    - Entre na pasta, e abrir esta no terminal
+    - python3 -m venv .venv -------------------------------------------------------------------> criar ambiente virtual
+    - source .venv/bin/activate --------------------------------------------------------------> ativar ambiente virtual
+    - deactivate --------------------------------------------------------------------------> desativar ambiente virtual
+    - ctrl + alt + del  ----------------------------------------------------> deletar ambiente virtual (após desativar)
 
-        - Crie uma pasta. EXEMPLO [ /home/seu_user/Documents/pasta ]
-        - Entre na pasta
-        - Fazer [ python3 -m venv .venv ]                                      ---> criar ambiente virtual
-        - Fazer [ source .venv/bin/activate ]                                  ---> ativar ambiente virtual
-        - Fazer [ deactivate ] para sedativar                                  ---> desativar ambiente virtual
-        - Fazer [ ctrl + alt + del ] para deletar (sempre depois de desativar) ---> deletar ambiente virtual
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ OBSERVAÇÕES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    venv  == parte do comando
+    .venv == nome do ambiente virtual padrão
+    """
+
+# Atualizar um ambiente virtual
+def parte9():
+    """
+    1 - pyenv install -l -----------------------------------------> verificar a versão inteiramente numérica mais atual
+    2 - pyenv versions --------------------------------------------------------> retornar a versão python ativada no OS
+
+    3 - Se 1 == 2
+
+        Configure a versão python ativada mais atual ---------------------------------> [ EXEMPLO: pyenv global 3.9.1 ]
+
+    4 - Caso contrário
+
+        - Instalar versão numérica mais atual do item 3 -----------------------------> [ EXEMPLO: pyenv install 3.9.1 ]
+        - Configurar a versão mais atual recem instalada como global ----------------> [ EXEMPLO: pyenv global 3.9.1  ]
     """
 
 # Configuração do Pycharm
-def parte8():
+def parte10():
     """
     1 - Extrair o arquivo pela opção [ Extract here ]
     2 - Renomear para [ pycharm ]
@@ -149,7 +173,7 @@ def parte8():
     """
 
 # Configuração essencial para criar projetos no Pycharm
-def parte9():
+def parte11():
     """
     1. Abrir o software
     2. Clicar em [ New Project ]
