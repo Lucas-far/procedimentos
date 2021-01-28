@@ -3,7 +3,7 @@
 1 - dual_boot_ubuntu_windows.py
 2 - instalar_python_ubuntu.py / instalar_python_windows.py
 3 - instalar_git.py
-4 - configurar_git.py / script_aulas_git
+4 - configurar_git.py / script_aulas_git.py
 5 - configurar_chave_ssh.py
 6 - pasta mysql / pasta postgresql
 
