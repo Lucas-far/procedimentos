@@ -1,11 +1,17 @@
 
 
-1 - dual_boot_ubuntu_windows.py
-2 - instalar_python_ubuntu.py / instalar_python_windows.py
-3 - instalar_git.py
-4 - configurar_git.py / script_aulas_git.py
-5 - configurar_chave_ssh.py
-6 - pasta mysql / pasta postgresql
+PROCEDIMENTOS GERAIS
+    1 - dual_boot_ubuntu_windows.py
+    2 - instalar_python_ubuntu.py / instalar_python_windows.py
+    3 - instalar_git.py
+    4 - configurar_chave_ssh.py
+
+PROCEDIMENTOS PARA PROJETOS
+    - configurar_git.py / script_aulas_git.py
+    - pasta mysql / pasta postgresql
+    - configurar_flake8.py
+    - configurar_travis_ci.py
+    - configurar_pyup.py
 
 ALTERNATIVO
     - humanizar_git.py
