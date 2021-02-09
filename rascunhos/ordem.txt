@@ -12,6 +12,7 @@ PROCEDIMENTOS PARA PROJETOS
     - configurar_flake8.py
     - configurar_travis_ci.py
     - configurar_pyup.py
+    - configurar_pytest.py / configurar unittest
 
 ALTERNATIVO
     - humanizar_git.py
