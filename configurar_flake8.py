@@ -1,37 +1,43 @@
 
 
 """
-Módulo: configurar_flake8.py
-Objetivo: analisar se um código/projeto segue as práticas da pep8 do Python
+Módulo:     configurar_flake8.py
 Instalação: pip install flake8
 """
 
+"------------------------------------------------ EXEMPLO CONFIGURAÇÃO ------------------------------------------------"
+"OBS"  # lembrar sempre de separar arquivos e pastas por [ , ]
+def exemplo():
+    """
+    [flake8]
+    max-line-length = 120
+    exclude =
+        pythonbirds,
+        entrevistas,
+        pytools,
+        outros arquivos,
+        migrations,
+        __pycache__,
+        manage.py,
+        settings.py
+    """
+
+"------------------------------------------------ TUTORIAL PARA PYTHON ------------------------------------------------"
 def python():
     """
-    1 - Criar um projeto (um diretório com um ambibente virtual)
-    2 - Criar qualquer arquivo [ .py ] com algum código erro de sintaxe de acordo com a [ pep8 ]
-    3 - No terminal: flake8
-    4 - Se não há erro(s), não há retorno
+    - Criar uma pasta, um ambiente virtual e um arquivo [ .py ]
+    - Ir ao terminal e executar: [ pip install flake8 ] e depois [ pip freeze > requirements.txt ]
+    - Entrar no arquivo [ .py ] e inserir algum código que não condiga com a sintaxe da [ pep8 ]
+    - Voltar ao terminal e executar: [ flake8 ]
+    - A biblioteca verifica os arquivos dentro de onde ela foi instalada
+    - Se há erros, mostra-se onde e qual o tipo dele
     """
 
+"------------------------------------------------ TUTORIAL PARA DJANGO ------------------------------------------------"
 def django():
     """
-    1 - Entre no seu projeto
-    2 - Na raiz, criar um arquivo: [ .flake8 ]
-    3 - Adicionar as seguintes linhas:
-
-        [flake8]
-        max-line-length = 120
-        exclude =
-
-          .nome_do_ambiente_virtual
-
-          ADICIONAIS PARA PROJETO
-          migrations
-          __pycache__
-          manage.py
-          settings.py
-
-    4 - No terminal: flake8
-    5 - Todos os arquivos serão analizados, com exceção das opções salvas no arquivo: [ .flake8 ]
+    - É basicamente a mesma coisa que no Python, porém em Django, costuma ter uma série de arquivos
+    - Sendo assim, é preciso criar na raiz, um arquivo [ .flake8 ] para configurá-lo
+    - Um exemplo de modelo foi descrito acima
+    - Tirando isso, todos os procedimentos são os mesmos
     """

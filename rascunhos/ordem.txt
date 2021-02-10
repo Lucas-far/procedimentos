@@ -7,12 +7,13 @@ PROCEDIMENTOS GERAIS
     4 - configurar_chave_ssh.py
 
 PROCEDIMENTOS PARA PROJETOS
+    - mysql / postgresql (DIRETÓRIOS)
     - configurar_git.py / script_aulas_git.py
-    - pasta mysql / pasta postgresql
     - configurar_flake8.py
     - configurar_travis_ci.py
     - configurar_pyup.py
     - configurar_pytest.py / configurar unittest
+    - configurar_repositorio.py
 
 ALTERNATIVO
     - humanizar_git.py
