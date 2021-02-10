@@ -5,6 +5,12 @@ Módulo: integracao_continua_com_travis_CI.py
 Aula:   Integração Contínua com Travis CI
 """
 
+"----------------------------------------- OBSERVAÇÃO RELEVANTE SOBRE TRAVIS -----------------------------------------"
+
+# A integração só inicia sob duas condições, além da de já ter logado no Travis com a sua conta Github
+# 1 -> Configuração do arquivo [ .travis.yml ]
+# 2 -> Após ativar a integração nas configurações, deve ter sido feito ao menos um PUSH, para que a integração execute
+
 "------------------------------------------------ EXEMPLO CONFIGURAÇÃO ------------------------------------------------"
 
 "Configuração"           # criar na raiz (.travis.yml)
