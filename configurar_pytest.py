@@ -21,15 +21,14 @@ def parte_2():
     """
 
 # Configuração do [ Pytest ] no [ Pycharm ]
+"OBS"  # para que a configuração possa ser feita, o pytest deve ter sido instalado
 def parte_3():
     """
-    - OBS: para que a configuração possa ser feita, o pytest deve ter sido instalado
-
     File -> Settings -> Tools -> Python Integrated Tools -> Default test runner = pytest
 
     EXECUTAR TESTE
         - botão direito no arquivo [ .py ] de teste (igual Unittest)
-        - ou como mencionado anteriormente: [ pytest test ]
+        - [ pytest tests/tests.py ] TRADUÇÃO [ pytest nome do pacote/nome do arquivo de testes ]
     """
 
 # Exemplo de testes
