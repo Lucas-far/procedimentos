@@ -14,7 +14,7 @@ PROCEDIMENTOS PARA PROJETOS
     - configurar_travis_ci.py
     - configurar_pyup.py
     - configurar_pytest.py / configurar unittest
-    - configurar_coverage_teste.py
+    - configurar_coverage_teste.py / configurar_pytestcov.py
 
 ALTERNATIVO
     - humanizar_git.py

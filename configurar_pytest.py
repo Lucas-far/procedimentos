@@ -1,13 +1,14 @@
 
 
+""""""
+
 # Instalar
+"OBS"  # O comando 3 baseia-se no fato de que você tenha, na raiz do seu projeto, um pacote com o nome: [ tests ]
 def parte_1():
     """
     - pip install pytest
     - pip freeze > requirements.txt
     - pytest tests
-
-    OBS: O comando 3 baseia-se no fato de que você tenha, na raiz do seu projeto, um pacote com o nome: [ tests ]
     """
 
 # Registros contextuais
