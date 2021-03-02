@@ -114,3 +114,66 @@ def configurar_pycharm():
     EXPLICAÇÃO DA ÚLTIMA SINTAXE:
         C:\users\meu_user\pasta_criada_para_armazenar_ambientes\pasta_do_ambiente\scripts\python.exe
     """
+
+
+
+
+
+
+
+
+
+
+def procedimentos():
+    """
+    REQUISITOS: Python / Java (opcional)
+
+    JAVA
+        - Baixar o instalador do Java JDK
+        - Instalar (verificar o path)
+        - Ir ao path do Java, na pasta (bin), e copie o caminho
+        - Meu computador -> Configurações avançadas -> Variáveis -> Variáveis do sistema -> Path -> Editar -> Novo
+        - Colar o path -> OK (No Windows 8, colar e ao final, adicionar ;)
+        - Ir ao terminal
+        - java --version (A versão do Java deve ser exibida)
+
+    PYTHON
+        ----------------------------------------------------- OBS ------------------------------------------------------
+        - O sistema operacional possui um usuário logado, então tudo que vier abaixo está sendo instalado no usuário
+        ----------------------------------------------------------------------------------------------------------------
+        - Baixar o instalador do Python
+        - Na instalação, marcar [ ADD TO PATH ] e o [ Launcher ]
+        - Ao fim da instalação, abrir o terminal
+        - No terminal: [ 1. python / 2. exit()        / 3. python --version ]
+        - No terminal: [ 1. pip    / 2. pip --version / 3. pip install --upgrade pip ]
+        - Se o comando 3 ter algum problema: reabrir o prompt, executar com admin, e tentar novamente
+        - No terminal: [ 1. pip install virtualenv / 2. pip install virtualenvwrapper-win ]
+        - Meu computador -> Configurações avançadas -> Variáveis -> Variáveis de usuário -> Path -> Novo
+
+        CONFIGURAÇÃO:
+            Nome = alguma coisa que você queira    (ex: VENVS) (obs: talvez manter o nome em cacha alta seja mandatório)
+            Valor = C:\Users\seu_user\pasta_criada (ex: lucas\venvs)
+
+        - No terminal: [ echo %VENVS% ] tendo que retornar o valor contido na configuração
+        - No terminal: [ mkvirtualenv nome_do_av ] o ambiente deve ser criado na pasta especificada no valor
+        - Caso seja preciso um reacesso: [ 1. chdir pasta_criada / 2. nome_do_av\scripts\activate ]
+
+    PYCHARM
+        - Baixar o instalador do Pycharm, marcar opções [ create shortcut 64 bit ] & [ create associations .py ]
+        - Na primeira abertura, serão requisitadas etapas de configuração estética
+        - Na tela inicial, escolher a opção: [ new project ]
+        - Se for a primeira vez, o Pycharm irá criar uma pasta [ \PycharmProjects\nome_do_seu_projeto ]
+        - Há duas opções viáveis na criação de um projeto
+
+        EXPLICAÇÃO:
+            - new environment      : quando você criar junto com um projeto, um novo ambiente virtual
+            - previously configured: quando você cria um projeto, já tendo um ambiente virtual (caso desse tutorial)
+
+        - Ao escolher [ previously configured ], clique nos [ ... ]
+        - É preciso escolher o caminho do ambiente virtual, na mesma pasta que o ativa, chamando o interpretador
+        - EXEMPLO: [ c:\users\lucas\venvs\venv1\scripts\python3.8 ]
+        - OK / Create
+        - O ambiente está configurado, e é criado um vínculo entre: [ projeto & ambiente virtual ]
+        - O ambiente virtual fica em:                            [ c:\users\lucas\venvs\ ]
+        - O projeto, que possui esse ambiente virtual, vai para: [ c:\users\lucas\PycharmProjects\ ]
+    """
