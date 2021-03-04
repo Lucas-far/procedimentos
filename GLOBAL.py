@@ -1,7 +1,10 @@
 
 
-""""""
+"""
+TUTORIAL SOBRE COMO CONFIGURAR INICIALMENTE UM PROJETO DJANGO
+"""
 
+##
 "-------------------------------------------- INSTALAR E CONFIGURAR O GIT ---------------------------------------------"
 
 ""  # sudo apt-get install git-all
@@ -9,6 +12,7 @@
 ""  # git config --global user.name 'nome_user_github'
 ""  # git config --global user.email 'email_user_github'
 
+##
 "---------------------------------------- VINCULAR REPOSITÓRIO REMOTO AO LOCAL ----------------------------------------"
 
 ""  # Ir ao Github e criar um repositório novo, sem os arquivos de configuração [ README.MD ] [ .gitignore ] [ LICENSE ]
@@ -23,6 +27,7 @@
 ""  # git branch -M main     OU     git branch -m main
 ""  # git push -u origin main
 
+##
 "------------------------------------ ADICIONAR ARQUIVOS RELEVANTES PÓS VINCULAÇÃO ------------------------------------"
 
 ""     # voltar ao github e criar um repositório novo apenas com os arquivos de configuração
@@ -38,6 +43,7 @@ def adicionais_gitignore():
     *.pyc
     """
 
+##
 "------------------------------------ CONFIGURAR UM ARQUIVO [ .gitignore ] GLOBAL -------------------------------------"
 
 ""  # Ir a rota [ /home/seu_user/ ], e criar arquivo [ .gitignore_global ]
@@ -54,6 +60,7 @@ def conteudo_do_arquivo_gitignore_global():
 ""  # Salvar, fechar e abrir o terminal
 ""  # git config --global core.excludesfile ~/.gitignore_global
 
+##
 "----------------------------------- CONFIGURAÇÔES PADRÃO PARA PROJETOS GLOBALMENTE -----------------------------------"
 
 ""  # django==2.2.17 (última versão LTS até o momento, portanto, recomendável)
@@ -62,7 +69,7 @@ def conteudo_do_arquivo_gitignore_global():
 ""  # model_mommy (testes)
 def comandos_pip():
     """
-    pip install django==2.2.17 django-bootstrap4 flake8 pytest model_mommy coverage
+    pip install django==2.2.17 django-bootstrap4 flake8 model_mommy coverage pytest
 
     terminal
     --------------------------------
@@ -119,7 +126,7 @@ def comandos_pip():
     ---------------------------------------------
     """
 
-
+##
 "------------------------------------------------- CONFIGURAR FLAKE8 --------------------------------------------------"
 
 ""  # Criar na raiz do projeto, um arquivo [ .flake8 ]
@@ -141,18 +148,7 @@ def configurar_flake8():
 
 ""  # Após a configuração, pode ser realizado um teste usando, no terminal, o comando: [ flake8 ]
 
-"-------------------------------------------------- CONFIGURAR PYUP ---------------------------------------------------"
-
-""  # O pyup analisa seus repositórios (normalmente em Github), para manter suas dependências instaladas, atualizadas
-""  # O primeiro passo é ir ao website do pyup [ https://pyup.io/ ] para vincular sua conta Github
-""  # Tendo os seus repositórios já vinculados, selecione um deles, para que o Pyup possa verificar
-""  # Se há dependências desatualizadas, estas serão destacadas,
-""  # As dependências desatualizadas terão um botão [ PR = PULL REQUEST ] que pode ser enviado ao repositório alvo
-
-"OBS"  # Um arquivo na raiz também pode ser configurado, mas não sei explicar exatamente como é sua configuração
-"OBS"  # O nome do arquivo deve ser [ .pyup.yml ]
-"OBS"  # Não é recomendável usar repositórios privados em relação ao [ Pyup ]
-
+##
 "----------------------------------------------- CONFIGURAÇÃO DO PYTEST -----------------------------------------------"
 
 ""  # A instalação pode ser pulada, pois eu acho a próxima configuração melhor (coverage)
@@ -182,10 +178,12 @@ def modelo_para_funcoes_normais():
 
 ""  # No terminal, executar: [ pytest local_dos_arquivos ], por exemplo [ pytest tests/test.py ]
 
+##
 "---------------------------------------------- CONFIGURAÇÃO DO COVERAGE ----------------------------------------------"
 
 ""  # Coverage é uma biblioteca feita para testes de arquivos, normalmente existentes no pacote aplicação
 ""  # Apesar de já ter sido instalado acima, é melhor deixar um lembrete: [ pip install coverage model_mommy ]
+
 
 def configurar_pastas_e_arquivo_coverage():
     """
@@ -321,41 +319,72 @@ def configurar_modelo_para_exemplificar_teste():
     -----------------------------------------------------
     """
 
+##
 "----------------------------------------------- CONFIGURAÇÃO DO TRAVIS -----------------------------------------------"
 
-# Recomenda-se ser a última instância a ser configurada, devido os scripts terem que rodar ferramentas já configuradas
+""  # Recomenda-se ser a última instância a ser configurada, devido os scripts terem que rodar ferramentas já configuradas
+""  # Ir ao website do [ Travis CI ] e vincular sua conta Github com a ferramenta
+""  # Clique no seu avatar (normalmente no lado direito e superior da tela) e clique em [ settings ]
+""  # Clique no nome do repositório que você quer fazer a integração
+""  # Volte ao seu projeto e criar um arquivo em sua raiz, chamado [ .travis.yml ]
+
+
 def configurar_travis_ci():
     """
-    - Ir ao website do [ Travis CI ] e vincular sua conta Github com a ferramenta
-    - Após o vinculamento, é preciso ir à página onde estão seus repositórios
-    - Clique no seu avatar (normalmente no lado direito e superior da tela) e clique em [ settings ]
-    - Clique no nome do repositório que você quer fazer a integração
-    - Volte ao seu projeto e criar um arquivo em sua raiz, chamado [ .travis.yml ]
+    -----------------------------------
+    language: python
+    python:
+      - "3.9"
+    install:
+      - pip install -r requirements.txt
+    script:
+      - flake8
+    -----------------------------------
+    """
 
-    --------------------------------------------------- configuração ---------------------------------------------------
-        language: python
-        python:
-          - "3.9"
-        install:
-          - pip install -r requirements.txt
-        script:
-          - flake8
-    --------------------------------------------------------------------------------------------------------------------
 
-    - No item [ script: ], dependendo da extensão do seu projeto, podem ser adicionados ações variadas
+""  # No item [ script: ], podem ser adicionados ações variadas, portanto, é muito maleável
 
-    ----------------------------------------------- exemplos de scripts ------------------------------------------------
+
+def exemplos_de_script():
+    """
     script:
       - flake8
       - pytest tests/tests.py
-    --------------------------------------------------------------------------------------------------------------------
-
-    - Porém, a execução de uma build do seu repositório, requer procedimentos extras
-
-    ------------------------------------------------------ EXTRAS ------------------------------------------------------
-    - A build é iniciada no site após efetuar um PUSH, feito após a configuração do arquivo [ .travis.yml ],
-    - A página executará o que foi escrito na configuração
-    - Pode-se adicionar emblemas ao arquivo [ README.MD ] do seu projeto, pela página da sua build
-    - Há um ícone clicável chamado [ build ], e ao clique, seu link para [ markdown ] pode ser copiado
-    - Vá ao seu projeto, no arquivo [ README.MD ] e cole este link, salve
     """
+
+
+""  # Porém, a execução de uma build de um repositório alvo, requer procedimentos extras
+""  # A build é iniciada sob duas condições:
+""  # Um arquivo [ .travis.yml ] deve ter sido configurado no seu projeto
+""  # Após a configuração do arquivo, um PUSH deve ter sido feito
+""  # Depois retorna-se ao site, onde está a build do seu repositório, e ela iniciará algum tempo depois
+""  # Na mesma página da build, têm-se acesso a emblemas para serem inseridos, por exemplo, no arquivo [ README.MD ]
+""  # Esses emblemas são ícones com o nome [ build ], são clicáveis, para selecionar o link apropriado [ markdown ]
+
+##
+"-------------------------------------------------- CONFIGURAR PYUP ---------------------------------------------------"
+
+""  # O pyup analisa seus repositórios (normalmente em Github), para manter suas dependências instaladas, atualizadas
+""  # O primeiro passo é ir ao website do pyup [ https://pyup.io/ ] para vincular sua conta Github
+""  # Tendo os seus repositórios já vinculados, selecione um deles, para que o Pyup possa verificar
+""  # Se há dependências desatualizadas, estas serão destacadas,
+""  # As dependências desatualizadas terão um botão [ PR = PULL REQUEST ] que pode ser enviado ao repositório alvo
+
+"OBS"  # Um arquivo na raiz também pode ser configurado, mas não sei explicar exatamente como é sua configuração
+"OBS"  # O nome do arquivo deve ser [ .pyup.yml ]
+"OBS"  # Não é recomendável usar repositórios privados em relação ao [ Pyup ]
+
+##
+"------------------------------------------- EVITAR PROBLEMAS COM O TRAVIS --------------------------------------------"
+
+""  # A razão de fazer isso, é para evitar problemas com Travis
+""  # Criar um repositório secundário com o mesmo nome do principal + _reqs
+""  # Ir ao repositório principal, copiar o conteúdo [ requirements.txt ]
+""  # Voltar ao repositório secundário, criar o mesmo arquivo e colar o conteúdo
+""  # Ir ao site do pyup
+""  # Adicionar o último repositório
+""  # Verificar as dependências
+""  # Copiar os emblemas
+""  # Colar no arquivo [ README.MD ] do repositório principal
+""  # Sempre que adicionar uma novo dependência no repositório principal, adicionar também ao repositório secundário
