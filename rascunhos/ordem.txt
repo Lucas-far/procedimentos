@@ -8,8 +8,8 @@ PROCEDIMENTOS GERAIS
 
 PROCEDIMENTOS PARA PROJETOS
     - mysql / postgresql (DIRETÓRIOS)
-    - configurar_repositorio.py
     - configurar_git.py / script_aulas_git.py
+    - configurar_repositorio.py
     - configurar_flake8.py
     - configurar_travis_ci.py
     - configurar_pyup.py
